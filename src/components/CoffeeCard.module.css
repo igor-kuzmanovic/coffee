@@ -1,0 +1,63 @@
+.card {
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--origin-accent, var(--accent));
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: block;
+  background:
+    linear-gradient(
+      140deg,
+      color-mix(in srgb, var(--origin-accent, var(--accent)) 10%, transparent) 0%,
+      transparent 50%
+    ),
+    var(--surface);
+  box-shadow: var(--shadow);
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
+  cursor: pointer;
+}
+
+.card:hover {
+  background:
+    linear-gradient(
+      140deg,
+      color-mix(in srgb, var(--origin-accent, var(--accent)) 10%, transparent) 0%,
+      transparent 55%
+    ),
+    var(--surface-ink);
+  border-color: var(--origin-accent, var(--accent));
+}
+
+.body {
+  padding: 1.1rem 1.1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-height: 6.5rem;
+}
+
+.bought {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-top: auto;
+  align-self: flex-end;
+}
+
+.name {
+  margin: 0.1rem 0 0;
+  font-family: 'Fraunces', Georgia, serif;
+  line-height: 1.1;
+  width: fit-content;
+  color: var(--origin-accent, var(--accent));
+  text-decoration-color: color-mix(in srgb, var(--origin-accent, var(--accent)) 60%, transparent);
+}
+
+.meta {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 1rem;
+}

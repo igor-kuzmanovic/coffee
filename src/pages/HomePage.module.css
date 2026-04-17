@@ -1,0 +1,30 @@
+.page {
+  container-type: inline-size;
+  container-name: page;
+}
+
+.header {
+  margin-bottom: 1.7rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.9rem;
+}
+
+.title {
+  font-family: 'Fraunces', Georgia, serif;
+  line-height: 1.1;
+  margin: 0;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  letter-spacing: -0.02em;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@container page (min-width: 760px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

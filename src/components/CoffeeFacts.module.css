@@ -1,0 +1,100 @@
+.facts {
+  margin: 0.5rem 0 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.context {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.8rem;
+}
+
+.section {
+  border: 1px solid var(--line);
+  border-radius: 0.6rem;
+  background: var(--surface);
+  padding: 0.8rem 0.9rem 0.7rem;
+}
+
+.list {
+  margin: 0;
+  display: grid;
+  gap: 0.3rem;
+}
+
+.row {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.9rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px dashed color-mix(in srgb, var(--line) 65%, transparent);
+}
+
+.row:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.rowLabel {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.rowValue {
+  margin: 0;
+  color: var(--text);
+  text-align: right;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.seaLevelValue {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid hsl(var(--sea-h, 140) 42% 66%);
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+  background: hsl(var(--sea-h, 140) 56% 92%);
+  color: hsl(var(--sea-h, 140) 36% 22%);
+}
+
+.roastLevelValue {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid hsl(var(--roast-h, 52) 52% 70%);
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+  background: hsl(var(--roast-h, 52) 58% 91%);
+  color: hsl(var(--roast-h, 52) 52% 24%);
+}
+
+.roastLevelDark {
+  border-color: hsl(0 0% 18%);
+  background: hsl(0 0% 9%);
+  color: hsl(0 0% 94%);
+}
+
+@media (prefers-color-scheme: dark) {
+  .roastLevelValue {
+    border-color: hsl(var(--roast-h, 52) 26% 44%);
+    background: hsl(var(--roast-h, 52) 28% 20%);
+    color: hsl(var(--roast-h, 52) 35% 84%);
+  }
+
+  .seaLevelValue {
+    border-color: hsl(var(--sea-h, 140) 24% 42%);
+    background: hsl(var(--sea-h, 140) 26% 20%);
+    color: hsl(var(--sea-h, 140) 34% 84%);
+  }
+
+  .roastLevelDark {
+    border-color: hsl(0 0% 35%);
+    background: hsl(0 0% 6%);
+    color: hsl(0 0% 94%);
+  }
+}

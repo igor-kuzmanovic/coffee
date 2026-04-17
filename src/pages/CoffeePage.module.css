@@ -1,0 +1,102 @@
+.page {
+  container-type: inline-size;
+  container-name: page;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+  color: var(--origin-accent, var(--accent));
+  text-decoration: none;
+  font-weight: 700;
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.backIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.card {
+  background:
+    linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--origin-accent, var(--accent)) 10%, transparent) 0%,
+      transparent 55%
+    ),
+    var(--surface);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--origin-accent, var(--accent));
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: block;
+}
+
+.content {
+  padding: 1rem 1.1rem 1.3rem;
+}
+
+.title {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-family: 'Fraunces', Georgia, serif;
+  line-height: 1.1;
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  color: var(--origin-accent, var(--accent));
+}
+
+.titleExternal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--origin-accent, var(--accent));
+  opacity: 0.8;
+  transform: translateY(-0.1em);
+  transition: opacity var(--transition-fast);
+}
+
+.titleExternal:hover {
+  opacity: 1;
+}
+
+.subtitle {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  color: var(--text-muted);
+  margin: 0.7rem 0 0.9rem;
+}
+
+.inlineExternal {
+  display: inline-flex;
+  align-items: center;
+  color: var(--origin-accent, var(--accent));
+  opacity: 0.8;
+  transition: opacity var(--transition-fast);
+}
+
+.inlineExternal:hover {
+  opacity: 1;
+}
+
+.linkIcon {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+.notesTitle {
+  margin: 1rem 0 0.5rem;
+}
+
+.notesList {
+  margin-top: 0.5rem;
+}

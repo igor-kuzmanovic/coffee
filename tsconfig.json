@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "preserve",
+    "moduleResolution": "bundler",
+    "allowArbitraryExtensions": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react-jsx",
+    "noEmit": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "verbatimModuleSyntax": true,
+    "resolveJsonModule": true,
+    "lib": ["ESNext", "DOM"],
+    "types": ["node", "react", "react/canary", "react-dom"]
+  },
+  "include": ["src"],
+  "exclude": ["docs"]
+}

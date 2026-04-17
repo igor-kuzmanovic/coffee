@@ -1,0 +1,41 @@
+{
+  "name": "coffee",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static coffee tracking website generator for GitHub Pages",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/igor-kuzmanovic/coffee"
+  },
+  "author": "Igor Kuzmanović (https://github.com/igor-kuzmanovic)",
+  "type": "module",
+  "scripts": {
+    "build": "rspack build",
+    "dev": "rspack serve",
+    "eslint": "eslint . --fix",
+    "prettier": "prettier . --write",
+    "tsc": "tsc --noEmit"
+  },
+  "dependencies": {
+    "lucide-react": "^0.553.0",
+    "react": "^19.3.0-canary-f4e0d4ed-20260429",
+    "react-dom": "^19.3.0-canary-f4e0d4ed-20260429",
+    "react-router-dom": "^7.14.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@rspack/cli": "^1.7.11",
+    "@rspack/core": "^1.7.11",
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^10.2.1",
+    "prettier": "^3.8.3",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.58.2",
+    "zod": "^4.1.12"
+  },
+  "engines": {
+    "node": ">=25"
+  }
+}
