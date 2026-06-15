@@ -1,34 +1,24 @@
 .card {
   text-decoration: none;
   color: inherit;
-  border: 1px solid var(--line);
-  border-top: 4px solid var(--origin-accent, var(--accent));
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius);
   overflow: hidden;
   display: block;
-  background:
-    linear-gradient(
-      140deg,
-      color-mix(in srgb, var(--origin-accent, var(--accent)) 10%, transparent) 0%,
-      transparent 50%
-    ),
-    var(--surface);
-  box-shadow: var(--shadow);
-  transition:
-    background-color var(--transition-fast),
-    border-color var(--transition-fast);
+  position: relative;
+  isolation: isolate;
+  --card-start: color-mix(in oklch, var(--origin-accent, var(--accent)) 96%, var(--surface) 4%);
+  --card-end: color-mix(in oklch, var(--continent-accent, var(--accent)) 96%, var(--surface) 4%);
+  --card-surface: color-mix(in oklch, var(--card-start) 50%, var(--card-end) 50%);
+  --card-ink: color-contrast(var(--card-surface) vs hsl(0 0% 10%), hsl(0 0% 98%));
+  --card-ink-muted: color-mix(in oklch, var(--card-ink) 70%, var(--card-surface));
+  background: linear-gradient(to bottom right in oklch, var(--card-start), var(--card-end));
+  transition: background var(--transition);
   cursor: pointer;
 }
 
 .card:hover {
-  background:
-    linear-gradient(
-      140deg,
-      color-mix(in srgb, var(--origin-accent, var(--accent)) 10%, transparent) 0%,
-      transparent 55%
-    ),
-    var(--surface-ink);
-  border-color: var(--origin-accent, var(--accent));
+  --card-start: color-mix(in oklch, var(--origin-accent, var(--accent)) 98%, var(--surface) 2%);
+  --card-end: color-mix(in oklch, var(--continent-accent, var(--accent)) 98%, var(--surface) 2%);
 }
 
 .body {
@@ -39,25 +29,24 @@
   min-height: 6.5rem;
 }
 
-.bought {
+.origin {
   margin: 0;
-  color: var(--text-muted);
-  font-size: 0.8rem;
-  margin-top: auto;
-  align-self: flex-end;
+  color: var(--card-ink);
+  font-size: 1.05rem;
+  font-weight: 600;
 }
 
 .name {
   margin: 0.1rem 0 0;
-  font-family: 'Fraunces', Georgia, serif;
   line-height: 1.1;
   width: fit-content;
-  color: var(--origin-accent, var(--accent));
-  text-decoration-color: color-mix(in srgb, var(--origin-accent, var(--accent)) 60%, transparent);
+  color: var(--card-ink);
+  text-decoration-color: color-mix(in oklch, var(--card-ink) 70%, transparent);
 }
 
-.meta {
+.roaster {
   margin: 0;
-  color: var(--text-muted);
-  font-size: 1rem;
+  color: var(--card-ink-muted);
+  font-size: 0.85rem;
+  align-self: flex-start;
 }

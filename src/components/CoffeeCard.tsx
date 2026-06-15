@@ -2,7 +2,7 @@ import { ViewTransition } from 'react';
 import type { Coffee, Roaster } from '../coffee';
 import { Link } from 'react-router-dom';
 import type { CSSProperties } from 'react';
-import { formatDate, getCountryColor } from '../coffee';
+import { getContinentColor, getCountryColor } from '../coffee';
 import styles from './CoffeeCard.module.css';
 
 type Props = {
@@ -13,32 +13,34 @@ type Props = {
 export function CoffeeCard({ coffee, roaster }: Props) {
   const href = `/coffee/${coffee.slug}`;
   const originAccent = getCountryColor(coffee.origin);
-  const style = { '--origin-accent': originAccent } as CSSProperties;
-  const metaParts = [coffee.origin, roaster?.name].filter((part): part is string => Boolean(part && part.trim()));
+  const continentAccent = getContinentColor(coffee.origin);
+  const style = { '--origin-accent': originAccent, '--continent-accent': continentAccent } as CSSProperties;
   const transitionName = `coffee-title-${coffee.slug}`;
-  const boughtTransitionName = `coffee-bought-${coffee.slug}`;
   const subtitleTransitionName = `coffee-subtitle-${coffee.slug}`;
+  const roasterTransitionName = `coffee-roaster-${coffee.slug}`;
   const cardTransitionName = `coffee-card-${coffee.slug}`;
 
   return (
     <ViewTransition name={cardTransitionName}>
       <Link className={styles.card} to={href} style={style} viewTransition>
         <div className={styles.body}>
-          <ViewTransition name={transitionName}>
-            <h2 className={styles.name}>{coffee.name}</h2>
-          </ViewTransition>
-          {metaParts.length ? (
-            <p className={styles.meta}>
-              <ViewTransition name={subtitleTransitionName}>
-                <span>{metaParts.join(' · ')}</span>
+          <h2 className={styles.name}>
+            <ViewTransition name={transitionName}>
+              <span>{coffee.name}</span>
+            </ViewTransition>
+          </h2>
+          <p className={styles.origin}>
+            <ViewTransition name={subtitleTransitionName}>
+              <span>{coffee.origin}</span>
+            </ViewTransition>
+          </p>
+          {roaster?.name ? (
+            <p className={styles.roaster}>
+              <ViewTransition name={roasterTransitionName}>
+                <span>{roaster.name}</span>
               </ViewTransition>
             </p>
           ) : null}
-          <p className={styles.bought}>
-            <ViewTransition name={boughtTransitionName}>
-              <span>{formatDate(coffee.boughtAt)}</span>
-            </ViewTransition>
-          </p>
         </div>
       </Link>
     </ViewTransition>

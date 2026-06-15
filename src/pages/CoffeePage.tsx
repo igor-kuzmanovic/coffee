@@ -2,7 +2,7 @@ import { ViewTransition, useMemo } from 'react';
 import type { CSSProperties } from 'react';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
 import { Link, useParams } from 'react-router-dom';
-import { coffeeBySlug, getCountryColor, roasterById } from '../coffee';
+import { coffeeBySlug, getContinentColor, getCountryColor, roasterById } from '../coffee';
 import { CoffeeFacts } from '../components/CoffeeFacts';
 import styles from './CoffeePage.module.css';
 
@@ -31,10 +31,11 @@ export function CoffeePage() {
 
   const roaster = roasterById.get(coffee.roasterId ?? -1);
   const originAccent = getCountryColor(coffee.origin);
-  const cardStyle = { '--origin-accent': originAccent } as CSSProperties;
-  const subtitleParts = [coffee.origin, roaster?.name].filter((part): part is string => Boolean(part && part.trim()));
+  const continentAccent = getContinentColor(coffee.origin);
+  const cardStyle = { '--origin-accent': originAccent, '--continent-accent': continentAccent } as CSSProperties;
   const transitionName = `coffee-title-${coffee.slug}`;
   const subtitleTransitionName = `coffee-subtitle-${coffee.slug}`;
+  const roasterTransitionName = `coffee-roaster-${coffee.slug}`;
   const cardTransitionName = `coffee-card-${coffee.slug}`;
 
   return (
@@ -46,28 +47,31 @@ export function CoffeePage() {
       <ViewTransition name={cardTransitionName}>
         <article className={styles.card} style={cardStyle}>
           <div className={styles.content}>
-            <ViewTransition name={transitionName}>
-              <h1 className={styles.title}>
+            <h1 className={styles.title}>
+              <ViewTransition name={transitionName}>
                 <span>{coffee.name}</span>
-                {coffee.website ? (
-                  <a
-                    className={styles.titleExternal}
-                    href={coffee.website}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label="Open coffee website"
-                  >
-                    <ExternalLink className={styles.linkIcon} aria-hidden="true" />
-                  </a>
-                ) : null}
-              </h1>
-            </ViewTransition>
-            {subtitleParts.length ? (
-              <p className={styles.subtitle}>
-                <ViewTransition name={subtitleTransitionName}>
-                  <span>{subtitleParts.join(' · ')}</span>
-                </ViewTransition>
-                {roaster ? (
+              </ViewTransition>
+              {coffee.website ? (
+                <a
+                  className={styles.titleExternal}
+                  href={coffee.website}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Open coffee website"
+                >
+                  <ExternalLink className={styles.linkIcon} aria-hidden="true" />
+                </a>
+              ) : null}
+            </h1>
+            <div className={styles.subtitle}>
+              <ViewTransition name={subtitleTransitionName}>
+                <span className={styles.origin}>{coffee.origin}</span>
+              </ViewTransition>
+              {roaster ? (
+                <span className={styles.roasterLine}>
+                  <ViewTransition name={roasterTransitionName}>
+                    <span>{roaster.name}</span>
+                  </ViewTransition>
                   <a
                     className={styles.inlineExternal}
                     href={roaster.website}
@@ -77,9 +81,9 @@ export function CoffeePage() {
                   >
                     <ExternalLink className={styles.linkIcon} aria-hidden="true" />
                   </a>
-                ) : null}
-              </p>
-            ) : null}
+                </span>
+              ) : null}
+            </div>
             {coffee.tastingNotes.length ? (
               <section>
                 <h2 className={styles.notesTitle}>Tasting notes</h2>

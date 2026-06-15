@@ -12,7 +12,6 @@
   text-decoration: none;
   font-weight: 700;
   cursor: pointer;
-  border: 0;
   background: transparent;
   padding: 0;
 }
@@ -23,19 +22,18 @@
 }
 
 .card {
-  background:
-    linear-gradient(
-      145deg,
-      color-mix(in srgb, var(--origin-accent, var(--accent)) 10%, transparent) 0%,
-      transparent 55%
-    ),
-    var(--surface);
-  border: 1px solid var(--line);
-  border-top: 4px solid var(--origin-accent, var(--accent));
-  border-radius: var(--radius-lg);
+  --card-start: color-mix(in oklch, var(--origin-accent, var(--accent)) 96%, var(--surface) 4%);
+  --card-end: color-mix(in oklch, var(--continent-accent, var(--accent)) 96%, var(--surface) 4%);
+  --card-surface: color-mix(in oklch, var(--card-start) 50%, var(--card-end) 50%);
+  --card-ink: color-contrast(var(--card-surface) vs hsl(0 0% 10%), hsl(0 0% 98%));
+  --card-ink-muted: color-mix(in oklch, var(--card-ink) 70%, var(--card-surface));
+  background: linear-gradient(to bottom right in oklch, var(--card-start), var(--card-end));
+  border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: var(--shadow);
   display: block;
+  color: var(--card-ink);
+  position: relative;
+  isolation: isolate;
 }
 
 .content {
@@ -46,21 +44,20 @@
   display: inline-flex;
   align-items: baseline;
   gap: 0.5rem;
-  font-family: 'Fraunces', Georgia, serif;
   line-height: 1.1;
   margin: 0;
   font-size: clamp(2rem, 4vw, 3.2rem);
-  color: var(--origin-accent, var(--accent));
+  color: var(--card-ink);
 }
 
 .titleExternal {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--origin-accent, var(--accent));
+  color: var(--card-ink);
   opacity: 0.8;
   transform: translateY(-0.1em);
-  transition: opacity var(--transition-fast);
+  transition: opacity var(--transition);
 }
 
 .titleExternal:hover {
@@ -69,19 +66,31 @@
 
 .subtitle {
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-  color: var(--text-muted);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
   margin: 0.7rem 0 0.9rem;
+}
+
+.origin {
+  color: var(--card-ink);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.roasterLine {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--card-ink-muted);
 }
 
 .inlineExternal {
   display: inline-flex;
   align-items: center;
-  color: var(--origin-accent, var(--accent));
+  color: var(--card-ink);
   opacity: 0.8;
-  transition: opacity var(--transition-fast);
+  transition: opacity var(--transition);
 }
 
 .inlineExternal:hover {

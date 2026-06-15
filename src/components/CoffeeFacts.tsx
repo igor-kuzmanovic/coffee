@@ -1,4 +1,3 @@
-import { ViewTransition } from 'react';
 import type { CSSProperties } from 'react';
 import { DARK_ROAST_LEVEL, formatDate, getRoastLevelHue, getSeaLevelHue } from '../coffee';
 import type { Coffee } from '../coffee';
@@ -12,7 +11,6 @@ export function CoffeeFacts({ coffee }: Props) {
   const seaLevelHue = getSeaLevelHue(coffee.seaLevel);
   const roastLevelHue = getRoastLevelHue(coffee.roastingLevel);
   const isDarkRoast = coffee.roastingLevel === DARK_ROAST_LEVEL;
-  const boughtTransitionName = `coffee-bought-${coffee.slug}`;
   const sourceDetails = [
     { key: 'origin', label: 'Origin', value: coffee.origin },
     { key: 'process', label: 'Process', value: coffee.process },
@@ -72,13 +70,7 @@ export function CoffeeFacts({ coffee }: Props) {
                         : undefined
                     }
                   >
-                    {key === 'bought' ? (
-                      <ViewTransition name={boughtTransitionName}>
-                        <span>{value}</span>
-                      </ViewTransition>
-                    ) : (
-                      value
-                    )}
+                    {value}
                   </dd>
                 </div>
               ))}

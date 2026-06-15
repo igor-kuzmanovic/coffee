@@ -83,25 +83,25 @@ export type Db = {
   coffees: Coffee[];
 };
 
-type Hsl = {
-  h: number;
-  s: number;
+type Oklch = {
   l: number;
+  c: number;
+  h: number;
 };
 
 type ContinentColorSeed = {
-  base: Hsl;
+  base: Oklch;
   hueRange: number;
-  satRange: number;
+  chromaRange: number;
   lightRange: number;
 };
 
 const CONTINENT_COLOR_SEEDS: Record<Continent, ContinentColorSeed> = {
-  Africa: { base: { h: 132, s: 38, l: 46 }, hueRange: 24, satRange: 10, lightRange: 10 },
-  Asia: { base: { h: 258, s: 34, l: 48 }, hueRange: 22, satRange: 9, lightRange: 10 },
-  'North America': { base: { h: 22, s: 46, l: 50 }, hueRange: 22, satRange: 10, lightRange: 10 },
-  'South America': { base: { h: 192, s: 36, l: 46 }, hueRange: 24, satRange: 9, lightRange: 10 },
-  Oceania: { base: { h: 284, s: 30, l: 50 }, hueRange: 10, satRange: 4, lightRange: 6 },
+  Africa: { base: { l: 0.62, c: 0.26, h: 140 }, hueRange: 110, chromaRange: 0.26, lightRange: 0.24 },
+  Asia: { base: { l: 0.6, c: 0.25, h: 300 }, hueRange: 120, chromaRange: 0.24, lightRange: 0.24 },
+  'North America': { base: { l: 0.62, c: 0.26, h: 28 }, hueRange: 110, chromaRange: 0.26, lightRange: 0.24 },
+  'South America': { base: { l: 0.6, c: 0.25, h: 210 }, hueRange: 120, chromaRange: 0.24, lightRange: 0.24 },
+  Oceania: { base: { l: 0.64, c: 0.22, h: 320 }, hueRange: 90, chromaRange: 0.2, lightRange: 0.2 },
 };
 
 const ROAST_LEVEL_HUE: Record<RoastLevel, number> = {
@@ -118,16 +118,14 @@ function clamp(value: number, min: number, max: number): number {
   return Math.min(max, Math.max(min, value));
 }
 
-function normalizeToUnit(index: number, count: number): number {
-  if (count <= 1) {
-    return 0;
-  }
-
-  return (index / (count - 1)) * 2 - 1;
+function formatOklch(color: Oklch): string {
+  return `oklch(${color.l.toFixed(4)} ${color.c.toFixed(4)} ${Math.round(color.h)}deg)`;
 }
 
-function formatHsl(color: Hsl): string {
-  return `hsl(${Math.round(color.h)} ${Math.round(color.s)}% ${Math.round(color.l)}%)`;
+export function getContinentColor(country: OriginCountry): string {
+  const continent = CONTINENT_BY_COUNTRY[country];
+  const seed = CONTINENT_COLOR_SEEDS[continent];
+  return formatOklch(seed.base);
 }
 
 export function getCountryColor(country: OriginCountry): string {
@@ -135,15 +133,18 @@ export function getCountryColor(country: OriginCountry): string {
   const seed = CONTINENT_COLOR_SEEDS[continent];
   const countries = COUNTRIES_BY_CONTINENT[continent] as readonly OriginCountry[];
   const index = countries.indexOf(country);
-  const axis = normalizeToUnit(index, countries.length);
+  const count = Math.max(1, countries.length);
+  const t = (index + 1) / (count + 1);
+  const sign = index % 2 === 0 ? 1 : -1;
+  const delta = (0.4 + t * 0.45) * sign;
 
-  const derived: Hsl = {
-    h: (seed.base.h + axis * seed.hueRange + 360) % 360,
-    s: clamp(seed.base.s + axis * seed.satRange, 16, 72),
-    l: clamp(seed.base.l - Math.abs(axis) * seed.lightRange + axis * 2, 24, 74),
+  const derived: Oklch = {
+    h: (seed.base.h + delta * seed.hueRange + 360) % 360,
+    c: clamp(seed.base.c + delta * seed.chromaRange, 0.04, 0.42),
+    l: clamp(seed.base.l - Math.abs(delta) * seed.lightRange, 0.24, 0.88),
   };
 
-  return formatHsl(derived);
+  return formatOklch(derived);
 }
 
 export function formatDate(dateString: string): string {
