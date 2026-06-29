@@ -83,6 +83,20 @@
       "website": "https://mlinprodukt.com/",
       "country": "Serbia",
       "city": "Belgrade"
+    },
+    {
+      "id": 13,
+      "name": "Banyai",
+      "website": "https://banyaicoffee.com/",
+      "country": "Hungary",
+      "city": "Budapest"
+    },
+    {
+      "id": 14,
+      "name": "Casino Mocca",
+      "website": "https://casinomocca.com/",
+      "country": "Hungary",
+      "city": "Budapest"
     }
   ],
   "coffees": [
@@ -1081,6 +1095,60 @@
       "boughtAt": "2026-06-07",
       "slug": "gathaithi-aa",
       "roastingLevel": null,
+      "roastingType": null
+    },
+    {
+      "id": 55,
+      "name": "Wush-Wush Natural",
+      "website": "https://coffeeroastingman.rs/prodavnica/ethiopia-wush-wush-natral/",
+      "origin": "Ethiopia",
+      "roasterId": 6,
+      "cuppingScore": 87,
+      "tastingNotes": ["floral", "citrus", "orange", "smooth aftertaste", "black tea finish"],
+      "process": "Natural",
+      "seaLevel": "2000",
+      "variety": "Heirloom Wush-Wush",
+      "harvestYear": "2025",
+      "roastDate": "2026-06-10",
+      "boughtAt": "2026-06-20",
+      "slug": "wush-wush-natural-1",
+      "roastingLevel": null,
+      "roastingType": null
+    },
+    {
+      "id": 56,
+      "name": "Mermelada",
+      "website": "https://bybeans.com/webshop/product/banyai-mermelada/1060",
+      "origin": "Costa Rica",
+      "roasterId": 13,
+      "cuppingScore": null,
+      "tastingNotes": ["ripe sweet figs", "plums", "grapes", "tropical fruits", "faint rum note"],
+      "process": "Anaerobic Honey Ferment",
+      "seaLevel": "1450",
+      "variety": "Caturra, Catuai",
+      "harvestYear": null,
+      "roastDate": "2026-06-17",
+      "boughtAt": "2026-06-27",
+      "slug": "mermelada",
+      "roastingLevel": "Light",
+      "roastingType": null
+    },
+    {
+      "id": 57,
+      "name": "Miroroma",
+      "website": "https://casinomocca.com/termek/miroroma-aa/",
+      "origin": "Kenya",
+      "roasterId": 14,
+      "cuppingScore": null,
+      "tastingNotes": ["blackcurrant", "blackberry", "rhubarb"],
+      "process": "Washed, Spontaneous Fermentation",
+      "seaLevel": "1890",
+      "variety": "SL28, SL34, Ruiru 11 , Batian",
+      "harvestYear": null,
+      "roastDate": "2026-06-17",
+      "boughtAt": "2026-06-27",
+      "slug": "miroroma",
+      "roastingLevel": "Light",
       "roastingType": null
     }
   ]
