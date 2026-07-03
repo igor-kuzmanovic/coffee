@@ -21,7 +21,7 @@ export function CoffeeFacts({ coffee }: Props) {
   const roastDetails = [
     { key: 'roast-type', label: 'Roast type', value: coffee.roastingType ?? '' },
     { key: 'roast-level', label: 'Roast level', value: coffee.roastingLevel ?? '' },
-    { key: 'roast-date', label: 'Roast date', value: coffee.roastDate },
+    { key: 'roast-date', label: 'Roast date', value: formatDate(coffee.roastDate) },
     { key: 'harvest-year', label: 'Harvest year', value: coffee.harvestYear ?? '' },
     { key: 'bought', label: 'Bought', value: formatDate(coffee.boughtAt) },
     {
