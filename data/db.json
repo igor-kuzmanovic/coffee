@@ -1019,7 +1019,7 @@
       "seaLevel": null,
       "variety": "Typica Caturra",
       "harvestYear": null,
-      "roastDate": "2025-04-17",
+      "roastDate": "2026-04-17",
       "boughtAt": "2026-05-09",
       "slug": "excellso-shb-huila-2",
       "roastingLevel": "Medium",
@@ -1099,6 +1099,30 @@
     },
     {
       "id": 55,
+      "name": "Colombia - Excelso SHB, Huila",
+      "website": null,
+      "origin": "Colombia",
+      "roasterId": 12,
+      "cuppingScore": null,
+      "tastingNotes": [
+        "balanced acidity",
+        "full body",
+        "initial sweetness with a subtle fruit note",
+        "dark cocoa finish",
+        "aroma of sweet lemon and grapefruit"
+      ],
+      "process": "Washed",
+      "seaLevel": null,
+      "variety": "Typica Caturra",
+      "harvestYear": null,
+      "roastDate": "2025-05-20",
+      "boughtAt": "2026-06-08",
+      "slug": "excellso-shb-huila-3",
+      "roastingLevel": "Medium",
+      "roastingType": "Espresso"
+    },
+    {
+      "id": 56,
       "name": "Wush-Wush Natural",
       "website": "https://coffeeroastingman.rs/prodavnica/ethiopia-wush-wush-natral/",
       "origin": "Ethiopia",
@@ -1116,7 +1140,7 @@
       "roastingType": null
     },
     {
-      "id": 56,
+      "id": 57,
       "name": "Mermelada",
       "website": "https://bybeans.com/webshop/product/banyai-mermelada/1060",
       "origin": "Costa Rica",
@@ -1134,7 +1158,7 @@
       "roastingType": null
     },
     {
-      "id": 57,
+      "id": 58,
       "name": "Miroroma",
       "website": "https://casinomocca.com/termek/miroroma-aa/",
       "origin": "Kenya",
