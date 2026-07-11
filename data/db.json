@@ -1174,6 +1174,24 @@
       "slug": "miroroma",
       "roastingLevel": "Light",
       "roastingType": null
-    }
+    },
+    {
+      "id": 59,
+      "name": "Nogales - Essence",
+      "website": "https://coffeeroastingman.rs/prodavnica/colombia-nogales-essence-gesha/",
+      "origin": "Colombia",
+      "roasterId": 6,
+      "cuppingScore": 91,
+      "tastingNotes": ["aromatic", "sweet", "notes of caramel", "gentle jasmine"],
+      "process": "Washed Fermented",
+      "seaLevel": "1750",
+      "variety": "Gesha",
+      "harvestYear": "2025",
+      "roastDate": "2026-06-04",
+      "boughtAt": "2026-07-08",
+      "slug": "nogales-essence",
+      "roastingLevel": null,
+      "roastingType": null
+    },
   ]
 }
