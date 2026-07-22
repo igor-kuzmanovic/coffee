@@ -1193,5 +1193,41 @@
       "roastingLevel": null,
       "roastingType": null
     },
+    {
+      "id": 60,
+      "name": "Kiri Kirinyaga AA",
+      "website": "https://73roasters.rs/kafa/kenya-kiri-kirinyaga-aa/",
+      "origin": "Kenya",
+      "roasterId": 1,
+      "cuppingScore": null,
+      "tastingNotes": ["bright", "juicy", "wine-like", "citrus", "berries", "ripe plums"],
+      "process": "Fully Washed",
+      "seaLevel": "1650-1900",
+      "variety": "SL28, SL34",
+      "harvestYear": null,
+      "roastDate": "2026-07-09",
+      "boughtAt": "2026-07-22",
+      "slug": "kiri-kirinyaga-aa",
+      "roastingLevel": null,
+      "roastingType": "Omni"
+    },
+    {
+      "id": 61,
+      "name": "Ayla Bombe",
+      "website": null,
+      "origin": "Ethiopia",
+      "roasterId": 1,
+      "cuppingScore": null,
+      "tastingNotes": ["bright", "smooth", "silky", "sweet apricot", "raspberry", "vanilla", "hibiscus"],
+      "process": "Natural",
+      "seaLevel": "1950-2000",
+      "variety": "JARC 74110, JARC 74158",
+      "harvestYear": null,
+      "roastDate": "2026-07-15",
+      "boughtAt": "2026-07-22",
+      "slug": "ayla-bombe",
+      "roastingLevel": null,
+      "roastingType": "Omni"
+    }
   ]
 }
