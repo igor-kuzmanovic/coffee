@@ -55,6 +55,7 @@ export type Roaster = {
   id: number;
   name: string;
   website: string;
+  instagram: string;
   country: string;
   city: string;
 };

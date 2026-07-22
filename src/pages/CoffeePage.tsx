@@ -72,13 +72,14 @@ export function CoffeePage() {
                   <ViewTransition name={roasterTransitionName}>
                     <span>{roaster.name}</span>
                   </ViewTransition>
-                  <a
-                    className={styles.inlineExternal}
-                    href={roaster.website}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label="Open roaster website"
-                  >
+                  <span aria-hidden="true">·</span>
+                  <a className={styles.inlineExternal} href={roaster.website} target="_blank" rel="noreferrer">
+                    Website
+                    <ExternalLink className={styles.linkIcon} aria-hidden="true" />
+                  </a>
+                  <span aria-hidden="true">·</span>
+                  <a className={styles.inlineExternal} href={roaster.instagram} target="_blank" rel="noreferrer">
+                    Instagram
                     <ExternalLink className={styles.linkIcon} aria-hidden="true" />
                   </a>
                 </span>

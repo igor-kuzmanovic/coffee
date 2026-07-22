@@ -12,6 +12,7 @@ const RoasterSchema = z.object({
   id: z.number().int(),
   name: z.string().min(1),
   website: z.string().min(1),
+  instagram: z.string().min(1),
   country: z.string().min(1),
   city: z.string().min(1),
 });

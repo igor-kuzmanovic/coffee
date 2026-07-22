@@ -2,8 +2,9 @@
   "roasters": [
     {
       "id": 1,
-      "name": "73roasters",
+      "name": "73 Roasters",
       "website": "https://73roasters.rs/",
+      "instagram": "https://www.instagram.com/73roasters",
       "country": "Serbia",
       "city": "Belgrade"
     },
@@ -11,6 +12,7 @@
       "id": 2,
       "name": "7AM",
       "website": "https://7am.rs/",
+      "instagram": "https://www.instagram.com/7am_roasters/",
       "country": "Serbia",
       "city": "Belgrade"
     },
@@ -18,6 +20,7 @@
       "id": 3,
       "name": "D59B",
       "website": "https://shop.d59b.rs/",
+      "instagram": "https://www.instagram.com/d59b.belgrade/",
       "country": "Serbia",
       "city": "Belgrade"
     },
@@ -25,6 +28,7 @@
       "id": 4,
       "name": "Fuka",
       "website": "https://www.fuka.rs/",
+      "instagram": "https://www.instagram.com/fuka.bg/",
       "country": "Serbia",
       "city": "Belgrade"
     },
@@ -32,6 +36,7 @@
       "id": 5,
       "name": "Koppa Coffee",
       "website": "https://koppacoffee.com/",
+      "instagram": "https://www.instagram.com/koppacoffee/",
       "country": "Serbia",
       "city": "Belgrade"
     },
@@ -39,20 +44,23 @@
       "id": 6,
       "name": "Coffee Roasting Man",
       "website": "https://coffeeroastingman.rs/",
+      "instagram": "https://www.instagram.com/coffee_roasting_man/",
       "country": "Serbia",
       "city": "Kikinda"
     },
     {
       "id": 7,
-      "name": "Melo Coffee",
+      "name": "Melö Coffee",
       "website": "https://melocoffee.rs/",
+      "instagram": "https://www.instagram.com/melocoffeeroasters/",
       "country": "Serbia",
       "city": "Belgrade"
     },
     {
       "id": 8,
-      "name": "Papa Bean",
+      "name": "Papabean",
       "website": "https://www.papabean.rs/",
+      "instagram": "https://www.instagram.com/papabean.coffee/",
       "country": "Serbia",
       "city": "Belgrade"
     },
@@ -60,20 +68,23 @@
       "id": 9,
       "name": "Przionica",
       "website": "https://przionica.rs/",
+      "instagram": "https://www.instagram.com/przionicabg/",
       "country": "Serbia",
       "city": "Belgrade"
     },
     {
       "id": 10,
-      "name": "Scout & Mary",
+      "name": "Scout Mary",
       "website": "https://scoutmary.coffee/",
+      "instagram": "https://www.instagram.com/scoutmary.coffee/",
       "country": "Serbia",
       "city": "Belgrade"
     },
     {
       "id": 11,
-      "name": "Sonder Belgrade",
+      "name": "Sonder",
       "website": "http://sonderbelgrade.com/",
+      "instagram": "https://www.instagram.com/sonder.belgrade/",
       "country": "Serbia",
       "city": "Belgrade"
     },
@@ -81,6 +92,7 @@
       "id": 12,
       "name": "Mlin Produkt",
       "website": "https://mlinprodukt.com/",
+      "instagram": "https://www.instagram.com/mlin_produkt/",
       "country": "Serbia",
       "city": "Belgrade"
     },
@@ -88,6 +100,7 @@
       "id": 13,
       "name": "Banyai",
       "website": "https://banyaicoffee.com/",
+      "instagram": "https://www.instagram.com/banyaicoffee/",
       "country": "Hungary",
       "city": "Budapest"
     },
@@ -95,6 +108,7 @@
       "id": 14,
       "name": "Casino Mocca",
       "website": "https://casinomocca.com/",
+      "instagram": "https://www.instagram.com/casinomocca/",
       "country": "Hungary",
       "city": "Budapest"
     }
